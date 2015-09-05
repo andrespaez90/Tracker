@@ -7,9 +7,20 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Mapkit/MapKit.h>
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController <MKMapViewDelegate, CLLocationManagerDelegate>{
+    CLLocationManager *locationManager;
+    CLGeocoder *geoCorder;
+    CLPlacemark *placeMark;
+}
 
+@property (weak, nonatomic) IBOutlet MKMapView *Map;
+@property (weak, nonatomic) IBOutlet UIButton *optionStartStop;
+@property (weak, nonatomic) IBOutlet UIButton *Reset;
+
+
+@property (strong,nonatomic)CLLocationManager *locationManager;
 
 @end
 
